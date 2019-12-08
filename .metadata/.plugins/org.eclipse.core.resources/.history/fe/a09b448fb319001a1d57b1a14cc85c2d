@@ -8,6 +8,7 @@
 </h:head>
 
 <h:body>
+ 	<h:messages globalOnly="true"/>
 	 <h:form>
 		Product ID: <h:inputText value = "#{product.pid}"/><br/>		
 		Product Store ID: <h:inputText value = "#{product.sid}"/><br/>
