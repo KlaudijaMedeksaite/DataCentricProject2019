@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -8,6 +8,12 @@
 	<title>Manage Stores</title>
 </h:head>
 <h:body>
+	 <h:form>
+		Store ID: <h:inputText value = "#{store.id}"/><br/>		
+		Store Name: <h:inputText value = "#{store.name}"/><br/>
+		Store Founded: <h:inputText  value = "#{store.date}"></h:inputText>
 	
+      <h:commandButton value="OK" action="#{storeControl.addStore(store)}"/>
+   </h:form>
 </h:body>
 </html>
