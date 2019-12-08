@@ -28,3 +28,5 @@
 0:0:0:0:0:0:0:1 - - [08/Dec/2019:11:58:40 +0000] "GET /Store/faces/ManageProducts.xhtml HTTP/1.1" 200 1096
 0:0:0:0:0:0:0:1 - - [08/Dec/2019:11:59:06 +0000] "POST /Store/faces/ManageProducts.xhtml HTTP/1.1" 500 3685
 0:0:0:0:0:0:0:1 - - [08/Dec/2019:11:59:29 +0000] "POST /Store/faces/ManageProducts.xhtml HTTP/1.1" 200 1335
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:12:09:01 +0000] "POST /Store/faces/index.xhtml;jsessionid=FC4E38B0EFB821139FAECD92AA7E7483 HTTP/1.1" 200 1291
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:12:09:24 +0000] "GET /Store/faces/ManageProducts.xhtml HTTP/1.1" 200 1095
