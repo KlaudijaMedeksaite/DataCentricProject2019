@@ -1,0 +1,18 @@
+!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Manage Stores</title>
+</h:head>
+<h:body>
+ 	<h:messages globalOnly="true"/>
+	 <h:form>
+		Product ID: <h:inputText value = "#{product.prodID}"/><br/>
+		Product Desc: <h:inputText value = "#{product.desc}"/>
+      <h:commandButton value="OK" action="#{productController.addProduct(product)}"/>
+   </h:form>
+</h:body>
+</html>
