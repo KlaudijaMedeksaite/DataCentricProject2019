@@ -1,5 +1,6 @@
 package com.shops;
 
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
@@ -37,4 +38,26 @@ public class ProductControl {
 		}
 	}
 	
+	public String deleteProduct(Product p) {
+		System.out.println(p.getPid());
+		System.out.println(p.getSid());
+		System.out.println(p.getProdName());
+		System.out.println(p.getPrice());
+		
+		try {
+			dao.deleteProduct(p);
+			return "ManageProducts";
+		}
+		 catch(CommunicationsException e) {
+			FacesMessage message = 
+			new FacesMessage("Error: Can't communicate with DB");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 }

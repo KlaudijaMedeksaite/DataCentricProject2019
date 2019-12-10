@@ -45,7 +45,7 @@ public class StoreControl {
 		
 		try {
 			dao.deleteStore(s);
-			return "index";
+			return "ManageStores";
 		}
 		 catch(CommunicationsException e) {
 			FacesMessage message = 
@@ -67,7 +67,7 @@ public class StoreControl {
 		
 		try {
 			dao.addStore(s);
-			return "index";
+			return "ManageStores";
 		}catch(SQLIntegrityConstraintViolationException e) {
 			FacesMessage message = 
 			new FacesMessage("Error: Store ID already exists");

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Add Store</title>
+</h:head>
+<h:body>	
+	<h:form>
+  	<h:messages globalOnly="true"/>
+	  <h1>Add Store</h1>
+	  Store ID: <h:inputText value="#{store.id}"/><br/><br/>
+      Store Name: <h:inputText value="#{store.name}"/><br/><br/>
+      Store Founded: <h:inputText value="#{store.founded}"/><br/><br/>
+      <h:commandLink value = "Add" action="#{storeControl.addStore(store)}" onClick="ManageStores"> 
+      </h:commandLink>
+	  	 
+   </h:form>
+   <h:form>
+   <h:commandLink value="Home " action="index"/>
+	  <h:commandLink value="Stores" action="ManageStores"/>
+   </h:form>
+</h:body>
+</html>

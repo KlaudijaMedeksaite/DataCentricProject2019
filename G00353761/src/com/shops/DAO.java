@@ -11,13 +11,14 @@ public class DAO {
 
 	private DataSource mysqlDS;
 
-	//constructor
+	// constructor
 	public DAO() throws Exception {
 		Context context = new InitialContext();
 		String jndiName = "java:comp/env/shops";
 		mysqlDS = (DataSource) context.lookup(jndiName);
 	}
 
+//PRODUCTS
 	// load products
 	public ArrayList<Product> loadProducts() throws Exception {
 
@@ -46,8 +47,22 @@ public class DAO {
 		}
 		return products;
 	}
-	
-	//load stores
+
+	// delete product
+	public void deleteProduct(Product product) throws Exception {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+
+		myConn = mysqlDS.getConnection();
+		String sql = "delete from product where pid = ?";
+		myStmt = myConn.prepareStatement(sql);
+		myStmt.setInt(1, product.getPid());
+		myStmt.execute();
+	}
+
+//STORES
+	// load stores
 	public ArrayList<Store> loadStores() throws Exception {
 
 		Connection myConn = null;
@@ -74,33 +89,33 @@ public class DAO {
 		}
 		return stores;
 	}
-	
+
+	// delete store
 	public void deleteStore(Store store) throws Exception {
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
-		
+
 		myConn = mysqlDS.getConnection();
 		String sql = "delete from store where id = ?";
 		myStmt = myConn.prepareStatement(sql);
 		myStmt.setInt(1, store.getId());
-		myStmt.execute();			
+		myStmt.execute();
 	}
-	
 
-	//add stores
+	// add store
 	public void addStore(Store store) throws Exception {
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
-		
+
 		myConn = mysqlDS.getConnection();
 		String sql = "insert into store values (?, ?, ?)";
 		myStmt = myConn.prepareStatement(sql);
 		myStmt.setInt(1, store.getId());
 		myStmt.setString(2, store.getName());
 		myStmt.setString(3, store.getFounded());
-		myStmt.execute();			
+		myStmt.execute();
 	}
 
 }
