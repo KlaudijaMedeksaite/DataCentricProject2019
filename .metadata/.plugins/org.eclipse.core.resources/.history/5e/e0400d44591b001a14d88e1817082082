@@ -1,0 +1,43 @@
+package com.shops;
+
+
+import java.sql.Date;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class Store {
+
+	int id;
+	String name;
+	java.sql.Date founded;
+	java.util.Date fDate;
+	
+	public java.util.Date getfDate() {
+		return fDate;
+	}
+	public void setfDate(java.util.Date fDate) {
+		this.fDate = fDate;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public java.sql.Date getFounded() {
+		return founded;
+	}
+	public void setFounded() {
+		this.founded = (java.sql.Date)getfDate();
+	}
+	
+	
+	
+}

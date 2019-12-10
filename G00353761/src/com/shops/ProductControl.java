@@ -37,30 +37,4 @@ public class ProductControl {
 		}
 	}
 	
-	public String addProduct(Product p) {
-		System.out.println(p.getPid());
-		System.out.println(p.getSid());
-		System.out.println(p.getProdName());
-		System.out.println(p.getPrice());
-		
-		try {
-			dao.addProduct(p);
-			return "index";
-		}catch(SQLIntegrityConstraintViolationException e) {
-			FacesMessage message = 
-			new FacesMessage("Error: Product ID already exists");
-			FacesContext.getCurrentInstance().addMessage(null, message);
-		}
-		catch(CommunicationsException e) {
-			FacesMessage message = 
-			new FacesMessage("Error: Can't communicate with DB");
-			FacesContext.getCurrentInstance().addMessage(null, message);
-		}
-		catch (Exception e) {
-			FacesMessage message = 
-			new FacesMessage("Error " + e.getMessage());
-			FacesContext.getCurrentInstance().addMessage(null, message);		
-		}
-		return null;
-	}
 }

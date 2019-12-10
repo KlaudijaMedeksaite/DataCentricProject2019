@@ -7,12 +7,19 @@
 <h:head>
 	<title>Add Store</title>
 </h:head>
-<h:body>
+<h:body>	
 	<h:form>
-      Store ID: <h:inputText value="#{store.id}"/><br/><br/>
+  	<h:messages globalOnly="true"/>
+	  <h1>Add Store</h1>
+	  Store ID: <h:inputText value="#{store.id}"/><br/><br/>
       Store Name: <h:inputText value="#{store.name}"/><br/><br/>
       Store Founded: <h:inputText value="#{store.founded}"/><br/><br/>
-      <h:commandButton value="OK" action="#{storeControl.addStore(store)}"/>
+      <h:commandLink value = "Add" action="#{storeControl.addStore(store)}"/>
+	  	 
+   </h:form>
+   <h:form>
+   <h:commandLink value="Home " action="index"/>
+	  <h:commandLink value="Stores" action="ManageStores"/>
    </h:form>
 </h:body>
 </html>

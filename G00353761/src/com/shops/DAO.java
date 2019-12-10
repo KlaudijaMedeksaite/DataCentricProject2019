@@ -69,26 +69,21 @@ public class DAO {
 			Store s = new Store();
 			s.setId(myRs.getInt("id"));
 			s.setName(myRs.getString("name"));
-			s.setFounded(myRs.getDate("founded"));
+			s.setFounded(myRs.getString("founded"));
 			stores.add(s);
 		}
 		return stores;
 	}
 	
-	
-	//add products
-	public void addProduct(Product product) throws Exception {
+	public void deleteStore(Store store) throws Exception {
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
 		
 		myConn = mysqlDS.getConnection();
-		String sql = "insert into product values (?, ?, ?, ?)";
+		String sql = "delete from store where id = ?";
 		myStmt = myConn.prepareStatement(sql);
-		myStmt.setInt(1, product.getPid());
-		myStmt.setInt(2, product.getSid());
-		myStmt.setString(3, product.getProdName());
-		myStmt.setDouble(4, product.getPrice());
+		myStmt.setInt(1, store.getId());
 		myStmt.execute();			
 	}
 	
@@ -104,7 +99,7 @@ public class DAO {
 		myStmt = myConn.prepareStatement(sql);
 		myStmt.setInt(1, store.getId());
 		myStmt.setString(2, store.getName());
-		myStmt.setDate(3, null);
+		myStmt.setString(3, store.getFounded());
 		myStmt.execute();			
 	}
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.annotation.ManagedBean"/>
-    <fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
     <fullyQualifiedTypeName name="javax.faces.bean.SessionScoped"/>
     <fullyQualifiedTypeName name="com.shops.ProductControl"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -11,7 +10,6 @@
     <fullyQualifiedTypeName name="com.mysql.jdbc.CommunicationsException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.time.Instant"/>
     <fullyQualifiedTypeName name="com.mongodb.client.FindIterable"/>
@@ -20,4 +18,6 @@
     <fullyQualifiedTypeName name="com.mongodb.DBCursor"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.shops.HeadOffice"/>
+    <fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>
