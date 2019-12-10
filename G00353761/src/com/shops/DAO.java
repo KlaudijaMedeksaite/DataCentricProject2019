@@ -1,18 +1,12 @@
 package com.shops;
 
 import java.sql.*;
-import java.time.Instant;
-import java.util.Date;
 import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-/*
- * FINISHED PRODUCT
- *  - DO STORE
- */
 public class DAO {
 
 	private DataSource mysqlDS;
@@ -53,6 +47,35 @@ public class DAO {
 		return products;
 	}
 	
+	//load stores
+	public ArrayList<Store> loadStores() throws Exception {
+
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+
+		myConn = mysqlDS.getConnection();
+
+		String sql = "select * from store";
+
+		myStmt = myConn.createStatement();
+
+		myRs = myStmt.executeQuery(sql);
+
+		ArrayList<Store> stores = new ArrayList<Store>();
+
+		// process result set
+		while (myRs.next()) {
+			Store s = new Store();
+			s.setId(myRs.getInt("id"));
+			s.setName(myRs.getString("name"));
+			s.setFounded(myRs.getDate("founded"));
+			stores.add(s);
+		}
+		return stores;
+	}
+	
+	
 	//add products
 	public void addProduct(Product product) throws Exception {
 		Connection myConn = null;
@@ -65,51 +88,24 @@ public class DAO {
 		myStmt.setInt(1, product.getPid());
 		myStmt.setInt(2, product.getSid());
 		myStmt.setString(3, product.getProdName());
-		myStmt.setDouble(4,product.getPrice());
+		myStmt.setDouble(4, product.getPrice());
 		myStmt.execute();			
 	}
 	
-	// load stores
-		public ArrayList<Store> loadStores() throws Exception {
 
-			Connection myConn = null;
-			Statement myStmt = null;
-			ResultSet myRs = null;
-
-			myConn = mysqlDS.getConnection();
-
-			String sql = "select * from store";
-
-			myStmt = myConn.createStatement();
-
-			myRs = myStmt.executeQuery(sql);
-
-			ArrayList<Store> stores = new ArrayList<Store>();
-
-			// process result set
-			while (myRs.next()) {
-				Store s = new Store();
-				s.setId(myRs.getInt("id"));
-				s.setName(myRs.getString("name"));
-				s.setFounded(myRs.getDate("founded"));
-				stores.add(s);
-			}
-			return stores;
-		}
+	//add stores
+	public void addStore(Store store) throws Exception {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
 		
-//STORES		
-		//add stores
-		public void addStore(Store store) throws Exception {
-			Connection myConn = null;
-			PreparedStatement myStmt = null;
-			ResultSet myRs = null;
-			
-			myConn = mysqlDS.getConnection();
-			String sql = "insert into store values (?, ?, ?)";
-			myStmt = myConn.prepareStatement(sql);
-			myStmt.setInt(1, store.getId());
-			myStmt.setString(2, store.getName());
-			myStmt.setDate(3, store.getFounded());
-			myStmt.execute();			
-		}
+		myConn = mysqlDS.getConnection();
+		String sql = "insert into store values (?, ?, ?)";
+		myStmt = myConn.prepareStatement(sql);
+		myStmt.setInt(1, store.getId());
+		myStmt.setString(2, store.getName());
+		myStmt.setDate(3, null);
+		myStmt.execute();			
+	}
+
 }

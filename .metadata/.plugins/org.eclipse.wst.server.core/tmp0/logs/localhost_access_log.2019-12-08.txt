@@ -92,3 +92,11 @@
 0:0:0:0:0:0:0:1 - - [08/Dec/2019:13:51:26 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 500 2072
 127.0.0.1 - - [08/Dec/2019:13:51:50 +0000] "GET / HTTP/1.1" 404 1074
 0:0:0:0:0:0:0:1 - - [08/Dec/2019:13:51:51 +0000] "GET /Store/faces/ManageStores.xhtml HTTP/1.1" 200 1007
+127.0.0.1 - - [08/Dec/2019:13:52:42 +0000] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:13:52:43 +0000] "GET /Store/faces/ManageStores.xhtml HTTP/1.1" 200 1007
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:13:53:01 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 200 1291
+127.0.0.1 - - [08/Dec/2019:14:25:33 +0000] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:14:25:33 +0000] "GET /Store/faces/ManageHeadOffices.xhtml HTTP/1.1" 500 3685
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:14:25:54 +0000] "GET /Store/faces/ManageHeadOffices.xhtml HTTP/1.1" 500 3554
+127.0.0.1 - - [08/Dec/2019:14:26:59 +0000] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [08/Dec/2019:14:27:00 +0000] "GET /Store/faces/ManageHeadOffices.xhtml HTTP/1.1" 200 786

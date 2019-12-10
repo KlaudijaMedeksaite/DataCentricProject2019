@@ -28,14 +28,15 @@ public class StoreControl {
 			e.printStackTrace();
 		}
 	}
+	
 	public void loadStores() {
-		System.out.println("In loadStores()");
 		try {
 			stores = dao.loadStores();
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 	}
+	
 	public String addStore(Store s) {
 		System.out.println(s.getId());
 		System.out.println(s.getName());
@@ -53,7 +54,6 @@ public class StoreControl {
 			FacesMessage message = 
 			new FacesMessage("Error: Can't communicate with DB");
 			FacesContext.getCurrentInstance().addMessage(null, message);
-
 		}
 		catch (Exception e) {
 			FacesMessage message = 

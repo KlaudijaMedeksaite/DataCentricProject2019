@@ -1,0 +1,16 @@
+package com.shops;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class HeadOffice {
+
+	int _id;
+	String location;
+	
+	public HeadOffice(int _id, String location){
+		this._id = _id;
+		this.location = location;
+	}
+	
+}

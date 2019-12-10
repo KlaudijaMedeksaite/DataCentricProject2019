@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Manage Stores</title>
+</h:head>
+
+ <f:metadata>
+  <f:event type="preRenderView" 
+      listener="#{storeControl.loadStores()}"/>
+  </f:metadata>
+ <h:outputStylesheet library="css" name="tables.css"/>
+  
+<h:body>
+
+<h:dataTable value="#{storeControl.stores}" var="s"
+  		headerClass="table-header"
+		rowClasses="table-odd-row,table-even-row">
+
+
+	<h:column>
+ 	  <f:facet name="header">Store ID</f:facet>
+ 	  #{s.id}
+	</h:column>
+	<h:column>
+ 	  <f:facet name="header">Store Name</f:facet>
+ 	  #{s.name}
+	</h:column>
+	<h:column>
+ 	  <f:facet name="header">Store Founded</f:facet>
+ 	  #{s.founded}
+	</h:column>
+	<h:column>
+ 	  <f:facet name="header">Action</f:facet>
+ 	  <h:commandButton action="ManageStores">Show Products</h:commandButton>
+ 	  <h:commandButton action="ManageStores">Delete</h:commandButton>
+
+	</h:column>
+	
+	</h:dataTable>
+   
+</h:body>
+</html>

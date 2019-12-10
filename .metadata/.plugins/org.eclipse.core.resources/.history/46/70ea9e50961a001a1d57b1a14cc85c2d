@@ -1,0 +1,14 @@
+package com.shops;
+
+import java.util.ArrayList;
+
+public class HeadOfficeControl {
+
+	MongoDAO mongoDao;
+	
+	ArrayList<HeadOffice> headOffices;
+	
+	public ArrayList<HeadOffice> getHeadOffices(){
+		return headOffices;
+	}
+}

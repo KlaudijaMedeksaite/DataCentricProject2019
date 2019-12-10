@@ -30,7 +30,6 @@ public class ProductControl {
 	}
 	
 	public void loadProducts() {
-		System.out.println("In loadProducts()");
 		try {
 			products = dao.loadProducts();
 		}catch (Exception e){
@@ -56,7 +55,6 @@ public class ProductControl {
 			FacesMessage message = 
 			new FacesMessage("Error: Can't communicate with DB");
 			FacesContext.getCurrentInstance().addMessage(null, message);
-
 		}
 		catch (Exception e) {
 			FacesMessage message = 
@@ -66,22 +64,3 @@ public class ProductControl {
 		return null;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,6 @@
+package com.shops;
+
+public class HeadOfficeControl {
+
+	MongoDAO mongoDao;
+}

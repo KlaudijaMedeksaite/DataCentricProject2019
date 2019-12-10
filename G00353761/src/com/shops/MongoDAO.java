@@ -1,9 +1,16 @@
 package com.shops;
-
 import org.bson.Document;
+
+import com.google.gson.Gson;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Projections.*;
+
+import java.util.ArrayList;
+
 
 public class MongoDAO {
 	
@@ -14,13 +21,38 @@ public class MongoDAO {
 	MongoDatabase database;
 	MongoCollection<Document> collection;
 	
-	
-	/* ======================================================================================================
-	 * Constructor
-	 * ====================================================================================================== */
+	//Constructor
 	public MongoDAO() throws Exception {
 		mongoClient = new MongoClient();
 		database = mongoClient.getDatabase(mongoDB);
 		collection = database.getCollection(mongoCollection);
 	}
+	
+	// load HeadOffices
+	public ArrayList<HeadOffice> loadHeadOffices() throws Exception {
+		
+		ArrayList<HeadOffice> hOffices = new ArrayList<HeadOffice>();
+		Gson gson = new Gson();
+
+		FindIterable<Document> headOffices = collection.find();
+		
+		for( Document d : headOffices) {
+			HeadOffice h = gson.fromJson(d.toJson(), HeadOffice.class);
+			hOffices.add(h);
+		} 
+		
+		for (HeadOffice x : hOffices) {
+			System.out.println(x);
+		}
+		return hOffices;
+	
+	}
+
+	//add HeadOffices
+	public void addHeadOffice(HeadOffice h) throws Exception{
+		
+	}
+
+	
+
 }

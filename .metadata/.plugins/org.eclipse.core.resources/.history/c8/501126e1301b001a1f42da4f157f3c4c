@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Manage Stores</title>
+</h:head>
+
+ <f:metadata>
+  <f:event type="preRenderView" 
+      listener="#{storeControl.loadStores()}"/>
+  </f:metadata>
+ <h:outputStylesheet library="css" name="tables.css"/>
+  
+<h:body>
+	 <h:form>
+		<!-- Store ID: <h:inputText value = "#{store.id}"/><br/>		
+		Store Name: <h:inputText value = "#{store.name}"/><br/>
+		Store Founded: <h:inputText  value = "#{store.date}"/> 
+		<h:commandButton value="OK" action="#{storeControl.addStore(store)}"/>-->
+	
+      
+<h:dataTable value="#{storeControl.stores}" var="store"
+  		headerClass="table-header"
+		rowClasses="table-odd-row,table-even-row">
+
+
+	<h:column>
+ 	  <f:facet name="header">Store ID</f:facet>
+ 	  #{store.id}
+	</h:column>
+	
+	<h:column>
+ 	  <f:facet name="header">Name</f:facet>
+ 	  #{store.name}
+	</h:column>
+	
+	<h:column>
+ 	  <f:facet name="header">Founded</f:facet>
+ 	  #{store.founded}
+	</h:column>
+
+	</h:dataTable>
+   
+   </h:form>
+</h:body>
+</html>

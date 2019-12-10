@@ -151,6 +151,8 @@
 
       <Context docBase="C:\Users\Klaudija\Desktop\DC Project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Klaudija\Desktop\DC Project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\G00353761" path="/Store" reloadable="true" source="org.eclipse.jst.jee.server:G00353761">
   <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="shops" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/shops" username="root"/>
+</Context><Context docBase="C:\Users\Klaudija\Desktop\DC Project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Lab10" path="/Lab10" reloadable="true" source="org.eclipse.jst.jee.server:Lab10">  
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="employeesdb14" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/employeesdb14" username="root"/>
 </Context></Host>
     </Engine>
   </Service>

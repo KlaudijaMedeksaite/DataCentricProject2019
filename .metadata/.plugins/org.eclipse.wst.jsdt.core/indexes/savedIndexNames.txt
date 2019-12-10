@@ -1,8 +1,10 @@
 INDEX VERSION 1.4+C:\Users\Klaudija\Desktop\DC Project\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 1785556476.index
+2380770842.index
 1620921760.index
 665379249.index
-3126902760.index
+3419254049.index
+2143315025.index
 2411425152.index
 4234430765.index
 2150587119.index
