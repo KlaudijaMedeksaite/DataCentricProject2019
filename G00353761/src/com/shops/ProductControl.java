@@ -37,6 +37,13 @@ public class ProductControl {
 			e.printStackTrace();
 		}
 	}
+	public void loadProducts(int id) {
+		try {
+			products = dao.loadProducts(id);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 	
 	public String deleteProduct(Product p) {
 		System.out.println(p.getPid());

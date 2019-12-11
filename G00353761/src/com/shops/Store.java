@@ -11,6 +11,7 @@ public class Store {
 	int id;
 	String name;
 	String founded;
+	int selected;
 	
 	public int getId() {
 		return id;
@@ -30,6 +31,16 @@ public class Store {
 	public void setFounded(String founded) {
 		this.founded = founded;
 	}
+	public int getSelected() {
+		return selected;
+	}
+	public String setSelected(Store selected) {
+		System.out.println(getSelected());
+		this.selected = selected.id;
+		
+		return "storeProdDetails";
+	}
+	
 	
 	
 	

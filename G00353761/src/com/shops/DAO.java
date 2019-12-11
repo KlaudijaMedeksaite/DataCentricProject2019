@@ -11,6 +11,8 @@ public class DAO {
 
 	private DataSource mysqlDS;
 
+	int sid;
+	
 	// constructor
 	public DAO() throws Exception {
 		Context context = new InitialContext();
@@ -44,6 +46,35 @@ public class DAO {
 			p.setProdName(myRs.getString("prodName"));
 			p.setPrice(myRs.getDouble("price"));
 			products.add(p);
+		}
+		return products;
+	}
+	public ArrayList<Product> loadProducts(int id) throws Exception {
+
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+
+		myConn = mysqlDS.getConnection();
+
+		String sql = "select * from product";
+
+		myStmt = myConn.createStatement();
+
+		myRs = myStmt.executeQuery(sql);
+
+		ArrayList<Product> products = new ArrayList<Product>();
+
+		// process result set
+		while (myRs.next()) {
+			Product p = new Product();
+			p.setPid(myRs.getInt("pid"));
+			p.setSid(myRs.getInt("sid"));
+			p.setProdName(myRs.getString("prodName"));
+			p.setPrice(myRs.getDouble("price"));
+			if(p.sid == id) {
+				products.add(p);
+			}
 		}
 		return products;
 	}
@@ -117,5 +148,5 @@ public class DAO {
 		myStmt.setString(3, store.getFounded());
 		myStmt.execute();
 	}
-
+	
 }

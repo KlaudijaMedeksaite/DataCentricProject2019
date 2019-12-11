@@ -16,6 +16,7 @@
   
 <h:body>
 <h:form> 
+  	<h:messages globalOnly="true"/>
 <h:commandButton value="Add Store" type="submit" action="addStore" />
 </h:form>
 
@@ -39,7 +40,7 @@
 	<h:column>
  	  <f:facet name="header">Action</f:facet>
  	  <h:form> 
- 	  <h:commandLink value="Show Products " action="storeProdDetails"/>
+ 	  <h:commandLink value="Show Products" action="#{store.setSelected(s)}"/>
  	  <h:commandLink value="Delete" action="#{storeControl.deleteStore(s)}"/>
 	  </h:form> 
 	</h:column>

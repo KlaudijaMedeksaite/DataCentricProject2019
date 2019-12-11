@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="javax.faces.bean.SessionScoped"/>
     <fullyQualifiedTypeName name="com.shops.ProductControl"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
     <fullyQualifiedTypeName name="javax.faces.application.FacesMessage"/>
     <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
     <fullyQualifiedTypeName name="com.mysql.jdbc.CommunicationsException"/>
@@ -20,4 +19,7 @@
     <fullyQualifiedTypeName name="com.shops.HeadOffice"/>
     <fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.lookup.ConstraintExceptionFormula"/>
+    <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
+    <fullyQualifiedTypeName name="org.apache.taglibs.standard.tag.common.core.NullAttributeException"/>
 </qualifiedTypeNameHistroy>
