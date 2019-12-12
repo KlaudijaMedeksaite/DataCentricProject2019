@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.annotation.ManagedBean"/>
-    <fullyQualifiedTypeName name="javax.faces.bean.SessionScoped"/>
     <fullyQualifiedTypeName name="com.shops.ProductControl"/>
     <fullyQualifiedTypeName name="javax.faces.application.FacesMessage"/>
     <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
     <fullyQualifiedTypeName name="com.mysql.jdbc.CommunicationsException"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.time.Instant"/>
@@ -23,4 +21,11 @@
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.shops.HeadOffice"/>
     <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+    <fullyQualifiedTypeName name="javax.faces.bean.SessionScoped"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.shops.StoreControl"/>
+    <fullyQualifiedTypeName name="com.sun.jdi.request.DuplicateRequestException"/>
+    <fullyQualifiedTypeName name="com.mongodb.DuplicateKeyException"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+    <fullyQualifiedTypeName name="com.mongodb.MongoWriteException"/>
 </qualifiedTypeNameHistroy>

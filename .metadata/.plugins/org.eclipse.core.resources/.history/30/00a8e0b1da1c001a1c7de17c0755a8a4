@@ -9,7 +9,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import com.mongodb.DuplicateKeyException;
-import com.mongodb.MongoWriteException;
 import com.mysql.jdbc.CommunicationsException;
 import com.sun.jdi.request.DuplicateRequestException;
 
@@ -61,11 +60,7 @@ public class HeadOfficeControl extends StoreControl {
 		System.out.println("In loadHeadOffices()");
 		try {
 			headOffices = mongoDao.loadHeadOffices();
-		}catch (CommunicationsException e) {
-			FacesMessage message = new FacesMessage("Error: Cannot connect to Mongo Database");
-			FacesContext.getCurrentInstance().addMessage(null, message);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -80,14 +75,14 @@ public class HeadOfficeControl extends StoreControl {
 		// System.out.println("found store, attempting to add");
 		try {
 			mongoDao.addHeadOffice(h);
-			
 			return "ManageHeadOffices";
-		} catch (MongoWriteException  e) {
-			FacesMessage message = new FacesMessage("Error: Store ID already has a Location");
+		} catch (DuplicateKeyException  e) {
+			FacesMessage message = new FacesMessage("Error: Store ID already has a headOffice");
 			FacesContext.getCurrentInstance().addMessage(null, message);
 		} catch (CommunicationsException e) {
-			FacesMessage message = new FacesMessage("Error: Cannot connect to Mongo Database");
+			FacesMessage message = new FacesMessage("Error: Can't communicate with DB");
 			FacesContext.getCurrentInstance().addMessage(null, message);
+
 		} catch (Exception e) {
 			FacesMessage message = new FacesMessage("Error " + e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, message);

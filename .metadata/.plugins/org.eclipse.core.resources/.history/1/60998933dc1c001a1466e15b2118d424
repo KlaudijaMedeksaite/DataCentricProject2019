@@ -40,10 +40,6 @@ public class ProductControl {
 	public void loadProducts(int id) {
 		try {
 			products = dao.loadProducts(id);
-		}catch(CommunicationsException e) {
-			FacesMessage message = 
-			new FacesMessage("Error: Cannot connect to MySQL database");
-			FacesContext.getCurrentInstance().addMessage(null, message);
 		}catch (Exception e){
 			e.printStackTrace();
 		}
