@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+	<title>Add Store</title>
+</h:head>
+<h:body>	
+	<h:form>
+  	<h:messages globalOnly="true"/>
+	  <h1>Add Store</h1>
+	  Store ID: <h:inputText required="true" requiredMessage="ID is mandatory" value="#{store.id}" id="i"/><br/><br/>
+	  <h:message for="i"/><br></br><br></br>
+      Store Name: <h:inputText required="true" requiredMessage="Name is mandatory" value="#{store.name}" id="n"/><br/><br/>
+      <h:message for="n"/><br></br><br></br>
+      Store Founded: <h:inputText required="true" requiredMessage="Founded is mandatory" value="#{store.founded}" id="f"/><br/><br/>
+      <h:message for="f"/><br></br><br></br>
+      <h:commandButton value = "Add" action="#{storeControl.addStore(store)}"/>
+	  	 
+   </h:form>
+   <h:form>
+   <h:commandLink value="Home " action="index"/>
+	  <h:commandLink value="Stores" action="ManageStores"/>
+   </h:form>
+</h:body>
+</html>

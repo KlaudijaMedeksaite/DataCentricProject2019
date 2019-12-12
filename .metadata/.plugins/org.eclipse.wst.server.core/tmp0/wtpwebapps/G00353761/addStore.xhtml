@@ -11,9 +11,10 @@
 	<h:form>
   	<h:messages globalOnly="true"/>
 	  <h1>Add Store</h1>
-	  Store ID: <h:inputText value="#{store.id}"/><br/><br/>
-      Store Name: <h:inputText value="#{store.name}"/><br/><br/>
-      Store Founded: <h:inputText value="#{store.founded}"/><br/><br/>
+	  Store Name: <h:inputText required="true" requiredMessage="Name is mandatory" value="#{store.name}" id="n"/><br/><br/>
+      <h:message for="n"/><br></br><br></br>
+      Store Founded: <h:inputText required="true" requiredMessage="Founded is mandatory" value="#{store.founded}" id="f"/><br/><br/>
+      <h:message for="f"/><br></br><br></br>
       <h:commandButton value = "Add" action="#{storeControl.addStore(store)}"/>
 	  	 
    </h:form>

@@ -7,6 +7,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mysql.jdbc.PreparedStatement;
+
 import static com.mongodb.client.model.Projections.*;
 
 import java.util.ArrayList;
@@ -40,16 +42,18 @@ public class MongoDAO {
 			HeadOffice h = gson.fromJson(d.toJson(), HeadOffice.class);
 			hOffices.add(h);
 		} 
-		
-		for (HeadOffice x : hOffices) {
-			System.out.println(x);
-		}
 		return hOffices;
 	
 	}
 
 	//add HeadOffices
 	public void addHeadOffice(HeadOffice h) throws Exception{
+		ArrayList<HeadOffice> hOffices = loadHeadOffices();
+		
+		Document query = new Document("_id", h._id).
+                append("location", h.location);
+            collection.insertOne(query);
+            System.out.println("Document inserted successfully");
 		
 	}
 

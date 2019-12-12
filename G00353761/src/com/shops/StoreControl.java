@@ -42,7 +42,40 @@ public class StoreControl {
 			e.printStackTrace();
 		}
 	}
+	
+	//check existence of Store
+	public boolean checkStores(Store s) {
+		boolean found = false;
+		try {
+			stores = dao.loadStores();
+			for(int i = 0; i<stores.size();i++) {
+				
+				if (stores.get(i).name.equals(s.name)) {
+					found = true;
+				}
+			}
+			return found;
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return found;
+	}
+
+	//generate ID
+	public int genID() {
+		int genID = 0;
+		
+		try {
+			stores = dao.loadStores();
+			genID = stores.size() + 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+			
+		return genID;
+	}
+	
 	// DELETE STORE
 	public String deleteStore(Store s) {
 		System.out.println(s.getId());
@@ -70,22 +103,15 @@ public class StoreControl {
 
 	// ADD STORE
 	public String addStore(Store s) {
-		System.out.println(s.getId());
+		System.out.println(genID());
+		s.setId(genID());
 		System.out.println(s.getName());
 		System.out.println(s.getFounded());
-		if ((s.getName()).trim().equals("")) {
-			FacesMessage message = new FacesMessage("Error: Need to enter a Name");
-			FacesContext.getCurrentInstance().addMessage(null, message);
-		} else if (s.getFounded() == null) {
-			FacesMessage message = new FacesMessage("Error: Need to enter a Founded date");
-		} else {
 
+		if(checkStores(s) == false) {
 			try {
 				dao.addStore(s);
 				return "ManageStores";
-			} catch (SQLIntegrityConstraintViolationException e) {
-				FacesMessage message = new FacesMessage("Error: Store ID already exists");
-				FacesContext.getCurrentInstance().addMessage(null, message);
 			} catch (CommunicationsException e) {
 				FacesMessage message = new FacesMessage("Error: Can't communicate with DB");
 				FacesContext.getCurrentInstance().addMessage(null, message);
@@ -93,7 +119,10 @@ public class StoreControl {
 				FacesMessage message = new FacesMessage("Error " + e.getMessage());
 				FacesContext.getCurrentInstance().addMessage(null, message);
 			}
-
+		}
+		else {
+			FacesMessage message = new FacesMessage("Error: Store Name already exists");
+			FacesContext.getCurrentInstance().addMessage(null, message);
 		}
 		return null;
 	}

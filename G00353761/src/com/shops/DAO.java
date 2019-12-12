@@ -49,6 +49,7 @@ public class DAO {
 		}
 		return products;
 	}
+	//load products by ID
 	public ArrayList<Product> loadProducts(int id) throws Exception {
 
 		Connection myConn = null;
@@ -78,7 +79,6 @@ public class DAO {
 		}
 		return products;
 	}
-
 	// delete product
 	public void deleteProduct(Product product) throws Exception {
 		Connection myConn = null;

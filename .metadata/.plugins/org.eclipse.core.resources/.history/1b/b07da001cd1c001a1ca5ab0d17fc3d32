@@ -1,0 +1,102 @@
+package com.lab8;
+
+import org.bson.Document;
+
+import com.google.gson.Gson;
+import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Projections.*;
+
+import java.util.ArrayList;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		MongoClient mongoClient = new MongoClient();
+
+		MongoDatabase database = mongoClient.getDatabase("storeHeadOfficeDB");
+
+		MongoCollection<Document> users2 =  			
+					database.getCollection("storeHeadOffice");
+		//Part1 Q1
+		//FindIterable<Document> users = users2.find();
+	
+		//Part1 Q2
+		/*FindIterable<Document> users = users2.find().projection(fields(include("car"),excludeId()));
+		for (Document d : users) {
+			System.out.println(d.toJson());
+		}*/
+		
+		
+		//Q5
+		/*BasicDBObject query = new BasicDBObject();
+		query.put("_id", 102);
+		
+		users2.deleteOne(query);
+		
+		BasicDBObject queryA = new BasicDBObject();
+		queryA.put("$gt", 20);
+		BasicDBObject queryA1 = new BasicDBObject();
+		queryA1.put("age", queryA);
+		users2.find(queryA1);*/
+		
+		/*Car c1 = new Car();
+		c1.setFuel("petrol");
+		c1.setReg("191-G-1");
+		
+		Car c2 = new Car();
+		c2.setFuel("diesel");
+		c2.setReg("10-WH-123");
+		
+		User u1 = new User();
+		u1.set_id(999);
+		u1.setAge(23);
+		u1.setEmail("tom@gmail.com");
+		u1.setFname("Tom");
+		u1.setSex("M");
+		u1.setSurname("Murphy");
+		u1.setTitle("Mr");
+		u1.setCar(c1);
+		
+		
+		User u2 = new User();
+		u2.set_id(888);
+		u2.setAge(56);
+		u2.setEmail("Mary@gmail.com");
+		u2.setFname("Mary");
+		u2.setSex("F");
+		u2.setSurname("Smith");
+		u2.setTitle("Ms");
+		u2.setCar(c2);
+		
+		ArrayList<User> userList = new ArrayList<User>();
+		userList.add(u1);
+		userList.add(u2);
+		
+		
+		for (User x : userList) {
+			System.out.println(x);
+		}*/
+		
+		
+		ArrayList<User> userList = new ArrayList<User>();
+		Gson gson = new Gson();
+
+		FindIterable<Document> users = users2.find();
+
+		for (Document d : users) {
+			   User user = gson.fromJson(d.toJson(), User.class);
+			   userList.add(user);
+		}
+
+		for (User x : userList) {
+			System.out.println(x);
+		}
+		
+	}
+
+}

@@ -148,3 +148,14 @@
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:11:20:09 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 200 10926
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:11:20:26 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 200 1959
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:11:20:35 +0000] "POST /Store/faces/addStore.xhtml HTTP/1.1" 200 2089
+127.0.0.1 - - [11/Dec/2019:17:53:16 +0000] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:17 +0000] "GET /Store/faces/index.xhtml HTTP/1.1" 200 1291
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:22 +0000] "POST /Store/faces/index.xhtml HTTP/1.1" 200 11190
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:22 +0000] "GET /Store/faces/javax.faces.resource/tables.css;jsessionid=1E82B23EF70D12556BA1D9A96539B3F8?ln=css HTTP/1.1" 200 465
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:26 +0000] "POST /Store/faces/ManageStores.xhtml;jsessionid=1E82B23EF70D12556BA1D9A96539B3F8 HTTP/1.1" 200 4037
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:31 +0000] "POST /Store/faces/storeProdDetails.xhtml HTTP/1.1" 200 10926
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:32 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 200 12197
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:53:56 +0000] "POST /Store/faces/ManageStores.xhtml HTTP/1.1" 200 1959
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:54:05 +0000] "POST /Store/faces/addStore.xhtml HTTP/1.1" 200 2024
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:54:11 +0000] "POST /Store/faces/addStore.xhtml HTTP/1.1" 200 2079
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:17:54:23 +0000] "POST /Store/faces/addStore.xhtml HTTP/1.1" 200 13132

@@ -10,7 +10,6 @@ import javax.faces.context.FacesContext;
 
 import com.mysql.jdbc.CommunicationsException;
 @ManagedBean
-@SessionScoped
 public class HeadOfficeControl {
 
 	MongoDAO mongoDao;
@@ -28,8 +27,8 @@ public class HeadOfficeControl {
 			e.printStackTrace();
 		}
 	}
-	
-	public void loadHeadOffices() {
+//LOAD HEAD OFFICES
+	public void loadHeadOffices() throws Exception{
 		System.out.println("In loadHeadOffices()");
 		try {
 			headOffices = mongoDao.loadHeadOffices();
@@ -37,8 +36,10 @@ public class HeadOfficeControl {
 			e.printStackTrace();
 		}
 	}
-	
+//ADD HEAD OFFICE	
 	public String addHeadOffice(HeadOffice h) {
+		System.out.println("In addHeadOffice()");
+
 		System.out.println(h.get_id());
 		System.out.println(h.getLocation());
 		
@@ -47,7 +48,7 @@ public class HeadOfficeControl {
 			return "index";
 		}catch(SQLIntegrityConstraintViolationException e) {
 			FacesMessage message = 
-			new FacesMessage("Error: HeadOffice ID already exists");
+			new FacesMessage("Error: Store ID already has a headOffice");
 			FacesContext.getCurrentInstance().addMessage(null, message);
 		}
 		catch(CommunicationsException e) {
